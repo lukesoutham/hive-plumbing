@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hive Plumbing · Licensed Plumber in Orem, Utah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hive Plumbing LLC — licensed plumbing for homes and businesses in Orem and Utah County. Water heaters, drains and sewer, leaks, gas lines, remodels, and new construction.">
+<meta property="og:title" content="Hive Plumbing · Licensed Plumber in Orem, Utah">
+<meta property="og:description" content="Licensed plumbing for homes and businesses across Orem and Utah County. Water heaters, drains, leaks, repairs, done right.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#faf6ec; --bg2:#f2e9d6; --ink:#1e1b15; --ink2:#59523f; --muted:#938a72;
+    --accent:#c89433; --accent-dk:#a5761c; --accent-lt:#e7c472; --line:rgba(30,27,21,.12);
+    --maxw:1120px; --e1:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.5;overflow-x:hidden}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none;border-radius:11px;padding:14px 22px;font-size:16px;transition:transform .15s var(--e1),background .2s,border-color .2s,color .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-call{background:var(--accent);color:#231704}
+  .btn-call:hover{background:var(--accent-dk);color:#fff}
+  .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.14)}
+
+  /* hex logo mark */
+  .hexmark{display:inline-block;vertical-align:middle;color:var(--accent-dk)}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm b{font-family:"Fraunces";font-weight:900;font-size:20px;letter-spacing:-.01em}
+  .brand .wm span{font-family:"IBM Plex Mono";font-size:9.5px;letter-spacing:.26em;color:var(--ink2);margin-top:5px}
+
+  /* NAV */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:14px;padding:15px 24px;transition:background .3s,backdrop-filter .3s,border-color .3s,color .3s;border-bottom:1px solid transparent;color:#fff}
+  .nav .brand{margin-right:auto}
+  .nav .hexmark{color:var(--accent-lt)}
+  .nav .wm b{color:#fff}.nav .wm span{color:rgba(255,255,255,.75)}
+  .nav.solid{background:rgba(250,246,236,.92);backdrop-filter:blur(12px);border-bottom-color:var(--line);color:var(--ink)}
+  .nav.solid .hexmark{color:var(--accent-dk)}
+  .nav.solid .wm b{color:var(--ink)}.nav.solid .wm span{color:var(--ink2)}
+  .nav .btn{padding:11px 16px;font-size:14px}
+  .nav .ghostlink{display:none;border:1px solid rgba(255,255,255,.5);color:#fff}
+  .nav.solid .ghostlink{border-color:var(--line);color:var(--ink)}
+  @media (min-width:820px){ .nav .ghostlink{display:inline-flex} }
+
+  /* HERO full-screen video */
+  .hero{position:relative;z-index:1;height:100svh;min-height:560px;overflow:hidden;background:#20242b}
+  .hero .poster{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+  .hero .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .hero .scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:
+    linear-gradient(180deg,rgba(20,16,8,.42) 0%,transparent 26%,transparent 50%,rgba(20,16,8,.72) 100%)}
+  .hero .inner{position:relative;z-index:4;display:flex;flex-direction:column;justify-content:flex-end;height:100%;max-width:var(--maxw);margin-inline:auto;padding:26px 24px calc(66px + env(safe-area-inset-bottom,0));color:#fff}
+  .k{font-family:"IBM Plex Mono";font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-lt);display:block;margin-bottom:16px}
+  .hero h1{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(46px,8.6vw,104px);line-height:.98;letter-spacing:-.03em;margin:0;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+  .hero h1 .em{color:var(--accent-lt)}
+  .hero .sub{font-size:clamp(17px,2.2vw,21px);color:rgba(255,255,255,.92);margin:18px 0 0;max-width:42ch;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+  .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .hero .phone{margin-top:18px;font-family:"IBM Plex Mono";font-size:14px;color:rgba(255,255,255,.85)}
+  .hero .phone b{color:#fff}
+  .cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.7);animation:cue 2.4s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:.4}50%{opacity:.9}}
+
+  /* hex divider accent */
+  .hexrow{display:flex;gap:6px;justify-content:center;margin:0 auto}
+  .hexrow i{width:14px;height:16px;background:var(--accent);opacity:.5;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .hexrow i:nth-child(2){opacity:.8}.hexrow i:nth-child(3){opacity:1}
+
+  main{position:relative;z-index:1;background:var(--bg)}
+  section{padding-block:clamp(64px,10vw,120px)}
+  .eyebrow{font-family:"IBM Plex Mono";font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dk)}
+  .lead{max-width:62ch}
+  .lead h2{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(30px,5.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 0}
+  .lead p{color:var(--ink2);font-size:19px;line-height:1.6;margin-top:16px}
+
+  .band{background:var(--bg2);border-block:1px solid var(--line)}
+  .band .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+  .stat{display:flex;flex-direction:column;gap:6px}
+  .stat b{font-family:"Fraunces";font-weight:900;font-size:clamp(28px,4.6vw,44px);color:var(--accent-dk);line-height:1}
+  .stat span{color:var(--ink2);font-size:14px;font-family:"IBM Plex Mono";letter-spacing:.03em}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-top:44px}
+  .why .row{display:flex;gap:14px;align-items:flex-start}
+  .why .hx{flex:none;width:30px;height:34px;margin-top:1px;background:var(--accent);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center}
+  .why .hx svg{width:15px;height:15px;color:#2a1c04}
+  .why h3{font-family:"Fraunces";font-weight:600;font-size:20px;margin:0}
+  .why p{color:var(--ink2);margin:6px 0 0;font-size:15.5px;line-height:1.5}
+
+  .svc{margin-top:40px;border-top:1px solid var(--line)}
+  .svc .r{display:flex;align-items:center;gap:20px;padding:22px 4px;border-bottom:1px solid var(--line)}
+  .svc .idx{font-family:"IBM Plex Mono";font-size:13px;color:var(--muted);width:34px;flex:none}
+  .svc h3{font-family:"Fraunces";font-weight:600;font-size:clamp(20px,2.6vw,26px);margin:0}
+  .svc p{color:var(--ink2);margin:5px 0 0;font-size:15.5px;max-width:52ch}
+  .svc .tag{margin-left:auto;font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.05em;color:var(--muted);white-space:nowrap}
+
+  .faq details{border-bottom:1px solid var(--line);padding:20px 0}
+  .faq summary{font-family:"Fraunces";font-weight:600;font-size:clamp(18px,2.4vw,23px);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--accent-dk);font-size:26px;line-height:1;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq p{color:var(--ink2);margin:14px 0 0;font-size:16.5px;line-height:1.6;max-width:64ch}
+
+  .final{background:linear-gradient(180deg,var(--bg),var(--bg2));text-align:center}
+  .final .hexmark{color:var(--accent-dk);margin-bottom:12px}
+  .final h2{font-family:"Fraunces";font-weight:900;font-size:clamp(32px,6vw,60px);line-height:1;letter-spacing:-.02em;margin:0}
+  .final h2 .em{color:var(--accent-dk)}
+  .final p{color:var(--ink2);font-size:19px;margin:18px auto 0;max-width:46ch}
+  .final .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .final .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .final .btn-ghost:hover{background:rgba(30,27,21,.05)}
+  .final .phone{margin-top:20px;font-family:"IBM Plex Mono";font-size:15px;color:var(--ink2)}
+
+  footer{border-top:1px solid var(--line);padding-block:44px;color:var(--muted);font-size:14px;background:var(--bg)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+  footer b{color:var(--ink2)}footer a{color:var(--ink2)}
+  .disclose{font-family:"IBM Plex Mono";font-size:11px;color:var(--muted);max-width:54ch;line-height:1.6;margin-top:18px}
+
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom,0));background:rgba(250,246,236,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mbar a{flex:1;text-align:center;font-weight:700;text-decoration:none;padding:14px;border-radius:11px}
+  .mbar .p{background:var(--accent);color:#231704}.mbar .g{border:1px solid var(--line);color:var(--ink)}
+  @media (max-width:720px){ .mbar{display:flex} .hero .inner{padding-bottom:calc(128px + env(safe-area-inset-bottom,0))} }
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--e1),transform .7s var(--e1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){ *{animation:none !important;transition:none !important} .reveal{opacity:1;transform:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="brand">
+    <svg class="hexmark" width="34" height="37" viewBox="0 0 100 110" aria-hidden="true"><polygon points="50,4 93,29 93,81 50,106 7,81 7,29" fill="none" stroke="currentColor" stroke-width="7"/><text x="50" y="70" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-weight="800" font-size="30" fill="currentColor">hive</text></svg>
+    <div class="wm"><b>Hive Plumbing</b><span>OREM, UTAH</span></div>
+  </div>
+  <a class="btn ghostlink" href="#services">Services</a>
+  <a class="btn btn-call" href="tel:+18010000000">Call Hive Plumbing</a>
+</nav>
+
+<!-- FULL-SCREEN HERO -->
+<header class="hero" id="hero">
+  <div class="poster" id="poster" aria-hidden="true"></div>
+  <video class="vid" autoplay muted playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="k">Orem, Utah &middot; Licensed Plumbing</span>
+    <h1>Plumbing, <span class="em">done right.</span></h1>
+    <p class="sub">Licensed plumbing for homes and businesses across Orem and Utah County. Water heaters, drains, leaks, and repairs, fixed right the first time.</p>
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:+18010000000">Get a free quote</a>
+      <a class="btn btn-ghost" href="sms:+18010000000">Text us</a>
+    </div>
+    <p class="phone mono">Call or text <b>(801) 000-0000</b></p>
+  </div>
+  <div class="cue mono">Scroll</div>
+</header>
+
+<main id="main">
+  <section class="wrap">
+    <div class="lead reveal">
+      <p class="eyebrow">Orem &amp; Utah County</p>
+      <h2>The plumber you call once and keep.</h2>
+      <p>Hive Plumbing is a licensed, local plumbing company serving Orem and the surrounding Utah County area. From a leaking water heater to full new-construction plumbing, we show up, give you an honest price up front, and do the job right, so you are not calling someone else in six months to fix it again.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="stat"><b>Licensed</b><span>Contractor &amp; insured</span></div>
+      <div class="stat"><b>Orem</b><span>Local to Utah County</span></div>
+      <div class="stat"><b>Home &amp; Business</b><span>Residential + commercial</span></div>
+      <div class="stat"><b>Up front</b><span>Honest pricing</span></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="lead reveal"><p class="eyebrow">Why Hive</p><h2>Done right, priced straight.</h2></div>
+    <div class="why reveal">
+      <div class="row"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Licensed &amp; insured</h3><p>A licensed Utah plumbing contractor. Work that meets code and holds up.</p></div></div>
+      <div class="row"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Honest pricing</h3><p>You get the price before we start. No surprises when the job is done.</p></div></div>
+      <div class="row"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Homes &amp; businesses</h3><p>From a single fixture to a commercial build-out, the same careful work.</p></div></div>
+      <div class="row"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Local &amp; reliable</h3><p>Orem-based. We show up when we say and treat your home like ours.</p></div></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="services">
+    <div class="lead reveal"><p class="eyebrow">What we do</p><h2>From a drip to a full re-pipe.</h2></div>
+    <div class="svc reveal">
+      <div class="r"><span class="idx">01</span><div><h3>Water heaters</h3><p>Repair, replacement, and tankless installs, so you never run out of hot water.</p></div><span class="tag">Home &amp; business</span></div>
+      <div class="r"><span class="idx">02</span><div><h3>Drains &amp; sewer</h3><p>Clogged drains, sewer lines, and the slow drain you have been ignoring.</p></div><span class="tag">On site</span></div>
+      <div class="r"><span class="idx">03</span><div><h3>Leaks &amp; repairs</h3><p>Dripping faucets, running toilets, burst pipes, found and fixed fast.</p></div><span class="tag">Fast response</span></div>
+      <div class="r"><span class="idx">04</span><div><h3>Gas lines &amp; piping</h3><p>Safe gas line installs and repairs for ranges, water heaters, and more.</p></div><span class="tag">Licensed</span></div>
+      <div class="r"><span class="idx">05</span><div><h3>Remodels &amp; new construction</h3><p>Full plumbing for bathrooms, kitchens, additions, and new builds.</p></div><span class="tag">By project</span></div>
+    </div>
+    <p class="mono" style="font-size:12px;color:var(--muted);margin-top:16px">Not sure if it is something we handle? Call or text and just ask.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="lead reveal"><p class="eyebrow">Straight answers</p><h2>The questions people ask us.</h2></div>
+    <div class="faq reveal" style="margin-top:30px">
+      <details><summary>Are you licensed and insured?</summary><p>Yes. Hive Plumbing is a licensed Utah plumbing contractor and carries insurance. Every job is done to code.</p></details>
+      <details><summary>Do you do both homes and businesses?</summary><p>We do. Residential and commercial, from a single repair to full new-construction plumbing.</p></details>
+      <details><summary>Will I know the price before you start?</summary><p>Yes. You get an honest quote up front, before any work begins, so there are no surprises.</p></details>
+      <details><summary>What areas do you serve?</summary><p>Orem and the surrounding Utah County area. If you are nearby and not sure, just call and ask.</p></details>
+      <details><summary>Do you install and replace water heaters?</summary><p>Yes, including standard tank and tankless water heaters, repair or full replacement.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <svg class="hexmark" width="44" height="48" viewBox="0 0 100 110" aria-hidden="true"><polygon points="50,4 93,29 93,81 50,106 7,81 7,29" fill="none" stroke="currentColor" stroke-width="7"/><text x="50" y="70" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-weight="800" font-size="30" fill="currentColor">hive</text></svg>
+      <h2>Got a plumbing problem? <span class="em">Let's fix it.</span></h2>
+      <p>Tell us what is going on and get an honest quote. Homes and businesses, across Utah County.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+18010000000">Call Hive Plumbing</a>
+        <a class="btn btn-ghost" href="sms:+18010000000">Text us</a>
+      </div>
+      <p class="phone mono">Hive Plumbing &middot; Orem, Utah</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:10px"><svg class="hexmark" width="30" height="33" viewBox="0 0 100 110" style="color:var(--accent-dk)" aria-hidden="true"><polygon points="50,4 93,29 93,81 50,106 7,81 7,29" fill="none" stroke="currentColor" stroke-width="7"/><text x="50" y="70" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-weight="800" font-size="30" fill="currentColor">hive</text></svg><div class="wm"><b style="font-family:Fraunces;font-weight:900;font-size:18px;color:var(--ink)">Hive Plumbing</b></div></div>
+      <div>Serving Orem &amp; Utah County, UT</div>
+      <p class="disclose">This is a demo website concept created for Hive Plumbing. Imagery is AI-generated for illustration. The phone number is a placeholder and details should be confirmed before publishing.</p>
+    </div>
+    <div>
+      <div><b>Call or text</b></div>
+      <div style="margin-top:4px"><a href="tel:+18010000000">(801) 000-0000</a></div>
+      <div style="margin-top:10px"><a href="#services">Services</a> &middot; <a href="#hero">Top</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar"><a class="p" href="tel:+18010000000">Call Hive Plumbing</a><a class="g" href="sms:+18010000000">Text</a></div>
+
+<script>
+(function(){
+  "use strict";
+  var nav=document.getElementById('nav'), vid=document.querySelector('.hero .vid'), poster=document.getElementById('poster');
+  var frameMode = matchMedia('(max-width:720px)').matches || matchMedia('(pointer:coarse)').matches;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  vid.src = frameMode ? 'assets/hero-mobile.mp4' : 'assets/hero-desktop.mp4';
+  var posterImg = frameMode ? 'assets/hero-poster-mobile.jpg' : 'assets/hero-poster.jpg';
+  poster.style.backgroundImage = "url('"+posterImg+"')";
+  vid.setAttribute('poster', posterImg);
+  try{ vid.load(); }catch(e){}
+
+  var armed=false, finished=false, started=false, scheduled=false;
+  vid.addEventListener('ended',function(){ finished=true; try{ vid.pause(); if(vid.duration) vid.currentTime=vid.duration-0.05; }catch(e){} });
+  function doPlay(){ if(reduce||finished) return; try{vid.muted=true;}catch(e){} if(!started){ try{vid.currentTime=0;}catch(e){} } var p=vid.play(); if(p&&p.then){ p.then(function(){started=true;}).catch(function(){ armGesture(); }); } else { started=true; } }
+  function playVid(){ if(reduce||finished||started) return; if(scheduled) return; scheduled=true; setTimeout(doPlay,650); }
+  function armGesture(){
+    if(armed) return; armed=true;
+    function go(){ try{vid.muted=true;}catch(e){} if(!started){ try{vid.currentTime=0;}catch(e){} } var p=vid.play(); if(p&&p.then) p.then(function(){started=true;clear();}).catch(function(){}); }
+    function clear(){ ['touchstart','pointerdown','click','scroll'].forEach(function(ev){ removeEventListener(ev,go); }); }
+    ['touchstart','pointerdown','click','scroll'].forEach(function(ev){ addEventListener(ev,go,{passive:true}); });
+  }
+  if(!reduce){
+    ['loadedmetadata','loadeddata','canplay','canplaythrough'].forEach(function(ev){ vid.addEventListener(ev,playVid); });
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden && !started) playVid(); });
+    playVid(); armGesture();
+  } else { try{vid.pause();}catch(e){} }
+
+  function onScroll(){ nav.classList.toggle('solid', window.scrollY > innerHeight*0.72); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');}); }
+})();
+</script>
+</body>
+</html>
