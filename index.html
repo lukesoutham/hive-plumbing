@@ -12,11 +12,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    /* dark honeycomb palette: warm charcoal + honey amber + bone */
-    --night:#141009; --night2:#1b150d; --night3:#221a0f; --card:#1e1810;
-    --bone:#f3ecdd; --bone2:#cdc4b2; --dim:#8d8370;
-    --honey:#f2b63e; --honey-dk:#d4932a; --honey-lo:rgba(242,182,62,.14);
-    --line:rgba(243,236,221,.12); --line2:rgba(243,236,221,.07);
+    /* light honeycomb palette: warm paper + honey amber + ink */
+    --night:#f7f4ee; --night2:#efe9db; --night3:#e9e1d0; --card:#fffdf8;
+    --bone:#1d1911; --bone2:#5b5341; --dim:#8c8373;
+    --honey:#eaa832; --honey-dk:#bb8018; --honey-lo:rgba(234,168,50,.16);
+    --line:rgba(30,24,16,.13); --line2:rgba(30,24,16,.07);
     --maxw:1160px;
     --e1:cubic-bezier(.2,.7,.2,1); --e2:cubic-bezier(.16,1,.3,1);
   }
@@ -147,6 +147,17 @@
   @media (max-width:620px){.svc .tag{display:none}}
   .svcnote{font-family:"IBM Plex Mono";font-size:12px;color:var(--dim);margin-top:18px}
 
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:46px}
+  @media (max-width:720px){.steps{grid-template-columns:1fr}}
+  .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px 28px 30px;overflow:hidden;transition:border-color .3s,transform .3s var(--e1)}
+  .step:hover{border-color:rgba(242,182,62,.4);transform:translateY(-3px)}
+  .step .snum{position:absolute;right:16px;top:2px;font-family:"Space Grotesk";font-weight:700;font-size:78px;color:rgba(242,182,62,.11);line-height:1;pointer-events:none}
+  .step .hx{position:relative;z-index:1;width:48px;height:54px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;margin-bottom:20px}
+  .step .hx svg{width:23px;height:23px;color:#1a1205}
+  .step h3{position:relative;z-index:1;font-family:"Space Grotesk";font-weight:600;font-size:21px;margin:0}
+  .step p{position:relative;z-index:1;color:var(--bone2);margin:9px 0 0;font-size:15.5px;line-height:1.55}
+
   /* faq */
   .faq{margin-top:34px}
   .faq details{border-bottom:1px solid var(--line);padding:22px 0}
@@ -187,6 +198,33 @@
   .stagger.in > *:nth-child(3){transition-delay:.19s}
   .stagger.in > *:nth-child(4){transition-delay:.26s}
   .stagger.in > *:nth-child(5){transition-delay:.33s}
+
+  /* light-theme context fixes (hero video stays dark, UI is light) */
+  .nav{color:#fff}
+  .nav .hexmark{color:var(--honey)}
+  .nav .wm b{color:#fff}
+  .nav .wm span{color:rgba(255,255,255,.78)}
+  .nav .ghostlink{border-color:rgba(255,255,255,.5);color:#fff}
+  .nav.solid{background:rgba(247,244,238,.86);border-bottom-color:var(--line)}
+  .nav.solid .hexmark{color:var(--honey-dk)}
+  .nav.solid .wm b{color:var(--bone)}
+  .nav.solid .wm span{color:var(--bone2)}
+  .nav.solid .ghostlink{border-color:rgba(30,24,16,.22);color:var(--bone)}
+  .btn-ghost{border-color:rgba(30,24,16,.26);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--honey-dk);color:var(--honey-dk)}
+  .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+  .hero .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.14);color:#fff}
+  .eyebrow{color:var(--honey-dk)} .eyebrow::before{background:var(--honey-dk)}
+  main h2.t .em,.final h2 .em{color:var(--honey-dk)}
+  .svc .idx{color:var(--honey-dk)}
+  .svc .r:hover{background:rgba(30,24,16,.025)}
+  .cell{background:var(--card)}
+  .photos .p1,.photos .p2{box-shadow:0 26px 54px -24px rgba(60,45,10,.32)}
+  .final .hexmark{color:var(--honey-dk)}
+  .faq summary:hover{color:var(--honey-dk)}
+  footer a:hover{color:var(--honey-dk)}
+  .mbar{background:rgba(247,244,238,.94);border-top-color:var(--line)}
+  .mbar .g{border-color:var(--line);color:var(--bone)}
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none !important;transition:none !important}
@@ -261,6 +299,15 @@
       <div class="hc"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Honest pricing</h3><p>You get the price before we start. No surprise line items when the job is done.</p></div>
       <div class="hc"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20V10l6-4 6 4m0 0v10M3 20h18M15 10l6 4v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Homes &amp; businesses</h3><p>From a single fixture to a full commercial build-out, the same careful work either way.</p></div>
       <div class="hc"><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="2.2"/></svg></span><h3>Local &amp; reliable</h3><p>Orem based. We show up when we say we will and treat your home like our own.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="lead reveal"><p class="eyebrow">How it works</p><h2 class="t">Three steps, <span class="em">no stress.</span></h2></div>
+    <div class="steps reveal stagger">
+      <div class="step"><span class="snum">01</span><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 3.5h3l1.5 4.5-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span><h3>Call or text</h3><p>Tell us what is going on. We talk it through and set a time that works for you.</p></div>
+      <div class="step"><span class="snum">02</span><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3h7l4 4v14H7z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14 3v4h4M10 13h5M10 16.5h5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><h3>Honest quote</h3><p>You get a clear, up-front price before any work starts. No surprises at the end.</p></div>
+      <div class="step"><span class="snum">03</span><span class="hx"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Fixed right</h3><p>We do the job to code and clean up after. Done once, so you are not calling again.</p></div>
     </div>
   </section>
 
